@@ -17,7 +17,7 @@ header {
 	float: left;
 	padding:0.5em 0 0 2em;
 	font-weight: 900;
-	font-size: 1.5em;
+	font-size: 1.75em;
 }
 
 .linksContainer {
@@ -34,13 +34,17 @@ header {
 
 
 a {
-	color:#4B698B;
+	color:#748CA7;
 	text-decoration: none;	
 	font-weight: 600;	
 	padding:.5em .5em !important;							
 }      
-a:visited {color:#4B698B;}
-a:hover {color:#748CA7;} 
+
+a:visited {color:#748CA7;}
+a:hover {
+	color:#7E9CBD;
+	text-decoration:underline;
+} 
 a:active {color:#748CA7;} 
 
 .contentContainer1 {
@@ -48,4 +52,8 @@ a:active {color:#748CA7;}
 	padding:6em 1em 1em 1em;
 	margin:auto;
 	max-width: 800px;	
+}
+
+.source span:hover {
+	font-size: .5em;
 }
