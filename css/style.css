@@ -1,0 +1,51 @@
+body {
+	background-color: #143254; 
+	color:white;
+	font-family: 'Fjord One', serif;
+}
+
+header {
+	background-color:black;
+    position: fixed;
+    height: 4em;
+    z-index: 9999;
+    width: 100%;
+}
+
+.title {
+	display:inline-block;
+	float: left;
+	padding:0.5em 0 0 2em;
+	font-weight: 900;
+	font-size: 1.5em;
+}
+
+.linksContainer {
+	float: right;
+	padding-right: 1.2em;
+	
+}
+
+.linksContainer ul li {
+	display: inline-block;
+	background-color: black;
+	text-align: right;
+}
+
+
+a {
+	color:#4B698B;
+	text-decoration: none;	
+	font-weight: 600;	
+	padding:.5em .5em !important;							
+}      
+a:visited {color:#4B698B;}
+a:hover {color:#748CA7;} 
+a:active {color:#748CA7;} 
+
+.contentContainer1 {
+	background-color:#2B4B6F;
+	padding:6em 1em 1em 1em;
+	margin:auto;
+	max-width: 800px;	
+}
