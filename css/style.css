@@ -1,21 +1,10 @@
-body {
-	background-color: #143254; 
-	color:white;
-	font-family: 'Fjord One', serif;
-}
 
-header {
-	background-color:black;
-    position: fixed;
-    height: 4em;
-    z-index: 9999;
-    width: 100%;
-}
+/*Main Header*/
 
 .title {
 	display:inline-block;
 	float: left;
-	padding:0.5em 0 0 2em;
+	padding:0.5em 1em 0 2em;
 	font-weight: 900;
 	font-size: 1.75em;
 }
@@ -32,7 +21,6 @@ header {
 	text-align: right;
 }
 
-
 a {
 	color:#748CA7;
 	text-decoration: none;	
@@ -47,13 +35,197 @@ a:hover {
 } 
 a:active {color:#748CA7;} 
 
-.contentContainer1 {
+/*End Main Header*/
+
+
+/*Main CSS -- expands to other pages */
+
+body {
+	background-color: #143254; 
+	color:white;
+	font-family: 'Fjord One', serif;
+}
+
+header {
+	background-color:black;
+    position: fixed;
+    height: 4em;
+    z-index: 9999;
+    width: 100%;
+}
+
+h1 {
+	font-size: 2.5em;
+	color:#FFDEAA;
+	text-shadow: 1px 1px #AA7E39;
+	text-align:center;
+}
+
+h2 {
+	color: #D4AB6B;
+}
+
+img {		
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.contentContainerAll {
 	background-color:#2B4B6F;
 	padding:6em 1em 1em 1em;
-	margin:auto;
-	max-width: 800px;	
+	margin:0 auto;
+	height:100%;
+	max-width: 1080px;
+	clear: both;	
 }
 
 .source span:hover {
 	font-size: .5em;
+}
+
+.clearfix:after {
+   content: " "; 
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.containerLeft {
+	float:left;
+}
+
+.containerRight {
+	float:right;
+}
+
+.containerRight {
+	text-align:left;
+}
+
+.containerLeft img {
+	text-align: left;
+}	
+.containerRight img {
+	text-align: right;
+}	
+
+.width75 {
+	width:75%;
+}
+
+.width50 {
+	width:50%;
+}
+
+.width25 {
+	width:25%;
+}
+
+/* End Main CSS */
+
+/* Exercises Specific CSS */
+
+.imgExercises {
+	display: block;
+	margin: 1em auto;
+	width:25em;
+	height:auto;
+}
+.hidden {
+	display:none
+}
+
+/* End Exercises Specific CSS */
+
+/* Going Further CSS */
+
+.tableFloat {
+	float:left;
+	margin-right: .5em; 
+}
+
+/* Media -- Responsiveness */
+
+@media (max-width: 1090px) {
+
+	h2{
+		padding-left:0.5em;
+	}	
+
+	header {
+		height:6em;
+	}
+	.containerLeft {
+		float:none;
+		margin:auto;
+	}
+
+	.containerRight {
+		float:none;
+		margin:auto;
+	}
+
+	.linksContainer {
+	float: left;
+	}
+
+	.imgMain {
+    	width: 25em;
+    	height: auto;
+	}
+
+	.imgExercises {
+    	width: 30em;
+	}
+
+	.width25 {
+		width:100%;
+		text-align:center;
+	}
+
+	.width50 {
+		width:100%;
+		text-align:center;
+	}
+	.width75 {
+		width:100%;
+		margin:auto;
+	}
+}
+
+@media (max-width: 695px) {
+	header {
+		height:10em;
+	}
+	.contentContainerAll {
+		padding: 9em 1em 1em 1em;
+	}
+	.linksContainer ul li {
+		display: block;
+		text-align: left; 
+	}
+	.imgMain {
+    	width: 20em;
+    	height: auto;
+	}
+	.imgExercises {
+    	width: 20em;
+	}
+}
+
+@media (max-width: 425px) {
+	header {
+		height:11.75em;
+	}
+	.contentContainerAll {
+		padding: 11em 1em 1em 1em;
+	}
+	.imgMain {
+    	width: 10em;
+	}
+	.imgExercises {
+    	width: 10em;
+	}
 }
