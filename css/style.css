@@ -57,7 +57,7 @@ header {
 h1 {
 	font-size: 2.5em;
 	color:#FFDEAA;
-	text-shadow: 1px 1px #AA7E39;
+	text-shadow: -2px -2px #AA7E39;
 	text-align:center;
 }
 
@@ -171,7 +171,7 @@ img {
 	text-align: left;
 }
 
-.challengeContainer {
+.resultsContainer {
 	background-color:#748CA7;
 	min-height: 4em;
 	border-radius: 10px;
@@ -185,7 +185,7 @@ img {
 	color: black;
 }
 
-#generate {
+.buttonSubmit {
   display: inline-block;
   margin: 0.5em 1em 0.5em 2em;
   padding: 0.3em 1.5em;
@@ -199,11 +199,11 @@ img {
   box-shadow: inset 1px 1px 1px rgba(255,255,255,0.05), inset 0 0 35px rgba(0,0,0,0.6), 0 5px 5px -4px rgba(0,0,0,0.8);
 }
 
-#generate:hover {
+.buttonSubmit:hover {
   background: rgba(255,255,255,0.05);
 }
 
-#generate:active {
+.buttonSubmit:active {
   position: relative;
   top: 3px;
   box-shadow: inset 0 1px 1px rgba(0,0,0,0.4), inset 0 0 35px rgba(0,0,0,0.6), 0 1px 1px rgba(255,255,255,0.1), inset 0 6px 4px rgba(0,0,0,0.4);
@@ -211,8 +211,9 @@ img {
 
 .challengeReplace {
 	margin-left:2em;
+	margin-bottom:1em;
 	color:black;
-	font-size:1.3em;
+	font-size:1.1em;
 }
 
 .challengeP {
@@ -233,7 +234,38 @@ img {
 	display: block;
 	height:6.5em;
 	width: 20em;
+}
 
+#gameTitle {
+	padding-left:0.3em;
+	margin:0 0 1em 1em;
+	color:black;
+	width: 45%;
+}
+
+.resultsContainer p, .resultsContainer b {
+	padding: 1em 0 0 1em;
+}
+
+.gameInformation {
+	color: #051D38;
+	padding:0 0 1em 2em;
+}
+
+.gameInformation h3 {
+	color: black;
+	font-size:1.25;
+}
+
+.spanTitle {
+	color:#051D38;
+	font-weight: bolder;
+	font-size:1.1em;
+	margin-right:3em;
+}
+
+.resultsContainer {
+	color: black;
 }
 
 /* End - Game Recommendations */
@@ -288,6 +320,10 @@ img {
 	.hidden {
 		margin:auto 6.5em;
 	}
+
+	#gameTitle {
+		width: 28em;
+	}
 }
 
 @media (max-width: 695px) {
@@ -312,7 +348,7 @@ img {
 		margin:auto 2em;
 	}
 
-	#generate {
+	.buttonSubmit {
 		margin-left:1em;
 	}
 
@@ -323,6 +359,9 @@ img {
 	.challengeReplace {
 		font-size: 1em;
 		margin:auto 1em auto 0.5em;
+	}
+		#gameTitle {
+		width: 20em;
 	}
 }
 
@@ -342,5 +381,12 @@ img {
 	}
 		.hidden {
 		margin:auto 1em;
+	}
+	#gameTitle {
+		width: 15em;
+	}
+
+	.spanTitle {
+		margin-right:.5em;
 	}
 }

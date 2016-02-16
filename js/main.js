@@ -53,11 +53,11 @@ var lvl2 =
 	"6" : "Go for a walk, pick your favorite album and continue for at least the length of six songs.",
 	"7" : "Head to the gym, do a core circuit if available. If you do not have a gym membership, do twenty crunches and two 30 second planks.",
 	"8" : "Pick out a location close by and go for a hike. If the weather is bad or you do not want to go outside, walk around the mall. Add at least one set of 15 crunches",
-	"9" : "Do 20 pushups followed by 20 bicycle kicks.",
-	"10" : "Do 25 jumping jacks followed by 15 pushups.",
-	"11" : "Do 30 mountain climbers followed by 30 jumping jacks",
+	"9" : "Do 20 pushups followed by 20 bicycle kicks. Walk around the block.",
+	"10" : "Do 25 jumping jacks followed by 15 pushups. Go out for a jog, length is up to you.",
+	"11" : "Do 30 mountain climbers followed by 30 jumping jacks. If you are feeling adventurous, get out on a hiking trail!",
 	"12" : "Jog around the block twice <b>OR</b> play a cardio game for 30 minutes.",
-	"13" : "Do two sets of the superman core exercise. <a href=\"http://www.wikihow.com/Perform-the-Superman-Core-Exercise\">Instructions</a>",
+	"13" : "Do two sets of the superman core exercise. Head out for a walk if you have the time. <a href=\"http://www.wikihow.com/Perform-the-Superman-Core-Exercise\">Instructions</a>",
 	"14" : "Swim three laps OR jog around the block three times.",
 	"15" : "Go for a 15 minute bike ride, or jog a mile.",
 	"16" : "Go to the gym and walk on the elliptical for 15 minutes followed by 15 pushups. No gym membership? Walk for 20 minutes either outside or at the mall.",
@@ -94,6 +94,36 @@ $("#generate").click(function() {
 		var replacement = lvl2[today];
 	}
 
-	$(".challengeReplace").html(challenge+'<p class="challengeP">'+replacement+'</p>');
+	$(".challengeReplace").html(challenge+'<div class="challengeP">'+replacement+'</div>');
 	});
 /* END - going-further.html*/
+
+/* game recommendations */
+
+$("#searchSubmit").click(function(e) {
+ e.preventDefault();
+$.ajax({ method:'GET',	
+         url: "https://ahmedakhan-game-review-information-v1.p.mashape.com/api/v1/information",
+         data: { game_name: $('#gameTitle').val() },
+         beforeSend: function(xhr){xhr.setRequestHeader('X-Mashape-Key', 'qhP1l0Q4rnmshDNWNSmA5WTcHdKVp1ndw7zjsnD8atlsgV0sAs');
+     		}
+ 		})
+         .done(function(data){
+         	if(data.message == "result not found")
+         		{$("#apiResults").html("<div class='gameInformation'> Game Requested was not found. Try one of the following: "+data.possibleChoices+"</div><br />")}
+         	else {
+         	console.log(data.result);
+         	$("#apiResults").html("<div class='gameInformation'>"+
+         		"<h3>Basic Info:</h3>"+
+         		"<span class='spanTitle'>Game Title:</span>"+data.result.name+"<br />"+
+         		"<span class='spanTitle'>Platform:&emsp;&nbsp;</span>"+data.result.availablePlatform+"<br />"+
+         		"<span class='spanTitle'>Genre:&emsp;&emsp;&emsp;</span>"+data.result.genre+"<br />"+
+         		"<span class='spanTitle'>Release Date:&nbsp;</span>"+data.result.rlsdate+"<br />"+
+         		"<h3>From Metacritic:</h3>"+
+         		"<span class='spanTitle'>Critic's Score:&nbsp;</span>"+data.result.metacritic.criticScore+"/100<br />"+
+         		"<span class='spanTitle'>User's Score:&emsp;</span>"+data.result.metacritic.userScore+"/10<br />"+
+
+         		"</div>");
+			}
+         });
+ });
