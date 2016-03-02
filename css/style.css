@@ -25,7 +25,7 @@ a {
 	color:#748CA7;
 	text-decoration: none;	
 	font-weight: 600;	
-	padding:.5em .5em !important;							
+	padding:.25em .25em !important;							
 }      
 
 a:visited {color:#748CA7;}
@@ -273,6 +273,10 @@ img {
 /* Media -- Responsiveness */
 
 @media (max-width: 1090px) {
+
+	a { 
+		padding:0 0;
+	}
 
 	h2{
 		padding-left:0.5em;
