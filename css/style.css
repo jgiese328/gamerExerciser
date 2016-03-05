@@ -127,20 +127,30 @@ img {
 
 /* Exercises Specific CSS */
 
-.imageToggle {
-	cursor:pointer;
-}
-
 .imgExercises {
 	display: block;
 	margin: 1em auto;
 	width:25em;
 	height:auto;
+	cursor:pointer;
 }
-.hidden {
-	text-align:left;
-	padding-left:2em;
-	display:none
+
+.description-show {
+  text-align:left;
+  padding-left:2.5em;
+  padding-right: 1.5em;
+}
+
+.description-show.ng-hide-add.ng-hide-add-active,
+.description-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.description-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
 }
 
 /* End Exercises Specific CSS */
@@ -238,9 +248,20 @@ img {
 
 #gameTitle {
 	padding-left:0.3em;
-	margin:0 0 1em 1em;
+	padding-bottom: 0.3em;
+	margin:0 0 2em 1em;
 	color:black;
 	width: 45%;
+}
+
+#loadingImage {
+	display:none;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+	height:2em !important;
+	width:2em !important;
+	padding: 0em 0em 1.5em 2em;
 }
 
 .resultsContainer p, .resultsContainer b {
@@ -249,7 +270,7 @@ img {
 
 .gameInformation {
 	color: #051D38;
-	padding:0 0 1em 2em;
+	padding:0 0 4em 2em;
 }
 
 .gameInformation h3 {
@@ -364,7 +385,7 @@ img {
 		font-size: 1em;
 		margin:auto 1em auto 0.5em;
 	}
-		#gameTitle {
+	#gameTitle {
 		width: 20em;
 	}
 }
@@ -373,6 +394,7 @@ img {
 
 	header {
 		height:11.75em;
+
 	}
 	.contentContainerAll {
 		padding: 11em 1em 1em 1em;
@@ -380,12 +402,15 @@ img {
 	.imgMain {
     	width: 10em;
 	}
+
 	.imgExercises {
     	width: 10em;
 	}
-		.hidden {
+
+	.hidden {
 		margin:auto 1em;
 	}
+
 	#gameTitle {
 		width: 15em;
 	}
@@ -394,3 +419,12 @@ img {
 		margin-right:.5em;
 	}
 }
+
+@media (max-width: 350px) {
+	header {
+		height:13.25em;
+	}
+	.contentContainerAll {
+		padding: 12em 1em 1em 1em;
+	}
+} 	

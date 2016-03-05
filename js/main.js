@@ -1,13 +1,4 @@
-
-/* exercises.html*/
-function imageToggle(X) {
-	$('#image'+X).click(function(){
-		$('#description'+X).toggle("fast");
-	});
-}
-/* END - exercises.html*/
-
-/* going-further.html*/
+/* START going-further.html*/
 var lvl1 =
 {
 	"1" : "Take a walk around the block, then do five pushups.",
@@ -98,32 +89,47 @@ $("#generate").click(function() {
 	});
 /* END - going-further.html*/
 
-/* game recommendations */
+/* START game recommendations */
+// HITTING THE API
 
 $("#searchSubmit").click(function(e) {
- e.preventDefault();
-$.ajax({ method:'GET',	
-         url: "https://ahmedakhan-game-review-information-v1.p.mashape.com/api/v1/information",
-         data: { game_name: $('#gameTitle').val() },
-         beforeSend: function(xhr){xhr.setRequestHeader('X-Mashape-Key', 'qhP1l0Q4rnmshDNWNSmA5WTcHdKVp1ndw7zjsnD8atlsgV0sAs');
-     		}
- 		})
-         .done(function(data){
-         	if(data.message == "result not found")
-         		{$("#apiResults").html("<div class='gameInformation'> Game Requested was not found. Try one of the following: "+data.possibleChoices+"</div><br />")}
-         	else {
-         	console.log(data.result);
-         	$("#apiResults").html("<div class='gameInformation'>"+
-         		"<h3>Basic Info:</h3>"+
-         		"<span class='spanTitle'>Game Title:</span>"+data.result.name+"<br />"+
-         		"<span class='spanTitle'>Platform:&emsp;&nbsp;</span>"+data.result.availablePlatform+"<br />"+
-         		"<span class='spanTitle'>Genre:&emsp;&emsp;&emsp;</span>"+data.result.genre+"<br />"+
-         		"<span class='spanTitle'>Release Date:&nbsp;</span>"+data.result.rlsdate+"<br />"+
-         		"<h3>From Metacritic:</h3>"+
-         		"<span class='spanTitle'>Critic's Score:&nbsp;</span>"+data.result.metacritic.criticScore+"/100<br />"+
-         		"<span class='spanTitle'>User's Score:&emsp;</span>"+data.result.metacritic.userScore+"/10<br />"+
-
-         		"</div>");
-			}
+	 e.preventDefault();
+	$('#loadingImage').show();
+	$("#apiResults").html("<span></span>");
+	$.ajax({ method:'GET',	
+	         url: "https://ahmedakhan-game-review-information-v1.p.mashape.com/api/v1/information",
+	         data: { game_name: $('#gameTitle').val() },
+	         beforeSend: function(xhr){xhr.setRequestHeader('X-Mashape-Key', 'qhP1l0Q4rnmshDNWNSmA5WTcHdKVp1ndw7zjsnD8atlsgV0sAs');
+	     		}
+	 		})
+	         .done(function(data){
+	         	$('#loadingImage').hide();
+	         	if(data.message == "result not found")
+	         		{$("#apiResults").html("<div class='gameInformation'> Game Requested was not found. Try one of the following: "+data.possibleChoices+"</div><br />")}
+	         	else {
+	         	console.log(data.result);
+	         	$("#apiResults").html("<div class='gameInformation'>"+
+	         		"<h3>Basic Info:</h3>"+
+	         		"<span class='spanTitle'>Game Title:</span>"+data.result.name+"<br />"+
+	         		"<span class='spanTitle'>Platform:&emsp;&nbsp;</span>"+data.result.availablePlatform+"<br />"+
+	         		"<span class='spanTitle'>Genre:&emsp;&emsp;&emsp;</span>"+data.result.genre+"<br />"+
+	         		"<span class='spanTitle'>Release Date:&nbsp;</span>"+data.result.rlsdate+"<br />"+
+	         		"<h3>From Metacritic:</h3>"+
+	         		"<span class='spanTitle'>Critic's Score:&nbsp;</span>"+data.result.metacritic.criticScore+"/100<br />"+
+	         		"<span class='spanTitle'>User's Score:&emsp;</span>"+data.result.metacritic.userScore+"/10<br />"+
+	         		"</div>");
+				}
          });
  });
+
+/* END game recommendations */
+
+
+// REMOVED THE FOLLOWING IN FAVOR OF ANGULARJS FUNCTIONALITY
+/* exercises.html*/
+/*function imageToggle(X) {
+	$('#image'+X).click(function(){
+		$('#description'+X).toggle("fast");
+	});
+}*/
+/* END - exercises.html*/

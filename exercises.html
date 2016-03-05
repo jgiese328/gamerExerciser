@@ -6,8 +6,6 @@
 		<link rel="stylesheet" href="css/normalize.css">
 		<link href='https://fonts.googleapis.com/css?family=Fjord+One' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style.css">
-		<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	</head>
 	<body>
 		<header>
@@ -21,58 +19,60 @@
 				</ul>
 			</div>
 		</header>
-		<div class="contentContainerAll">
+		<div ng-app="ngToggle" class="contentContainerAll">
 			
 			<h1>Stretching Basics</h1>
 			<p> So you have come... to learn or expand upon your knowledge of stretching your arms/wrists. Please click on the following images to learn the steps to complete your training.</p> <br /> 
 
-			<div class = "contentContainer clearfix">
-				<div class="containerLeft width50">
-					<img  class = "imgExercises imageToggle" id="image1" src="img/main-stretch.jpg"  alt="controller">
-					<div class = "hidden" id="description1">
+			<div ng-controller="ImageCtrl" class = "contentContainer clearfix">
+				<div  class="containerLeft width50">
+					<img ng-click="toggleCustom()" class = "imgExercises" id="image1" src="img/prayer-stretch.jpg"  alt="controller">
+					<div ng-hide="custom" id="description1" class='description-show'>
 					<h3>Prayer Stretch</h3>
 					<p> Place your palms together centered in front of your chest and slowly lower your hands toward your waistline. Keep lowering until you feel a mild to moderate stretch under your forearms. Hold for 15 to 30 seconds. Repeat 4 times.
 					</p>
 					</div>
+					<div ng-show="custom" class='description-show'>
+					</div>
 				</div>
 
-				<div class="containerRight width50">
-					<img  class = "imgExercises imageToggle" id="image2" src="img/main-stretch.jpg"  alt="controller"  >
-					<div class = "hidden" id="description2">
+				<div ng-controller="ImageCtrl" class="containerRight width50">
+					<img ng-click="toggleCustom()" class = "imgExercises" id="image2" src="img/wrist-flexor-stretch.jpg"  alt="controller"  >
+					<div ng-hide="custom" id="description2" class='description-show'>
 					<h3>Wrist Flexor Stretch</h3>
 					<p>Extend your arms in front of you with elbows straight, take the wrist of one arm and pull backwards using your other hand until you feel a mild to moderate stretch. Hold for 15-20 seconds and repeat 3 times.  </p>
 					</div>
 				</div>
 			</div>
-			<div class = "contentContainer clearfix">
+			<div ng-controller="ImageCtrl" class = "contentContainer clearfix">
 				<div class="containerLeft width50">
-					<img  class = "imgExercises imageToggle" id="image3" src="img/main-stretch.jpg"  alt="controller"  >
-					<div class = "hidden" id="description3">
+					<img ng-click="toggleCustom()" class = "imgExercises" id="image3" src="img/thumb-stretch.jpg"  alt="controller"  >
+					<div ng-hide="custom" id="description3" class='description-show'>
 					<h3>Thumb Stretch</h3>
 					<p>Start with your arm extended with palm up. keep fingers straight and bring thumb to the side the shape of an L or reverse L. Pull thumb back while bringing palm backwards toward the top of your forearm. Hold gently for 15-20 seconds. Repeat 3 times. </p>
 					</div>
 				</div>
 
-				<div class="containerRight width50">
-					<img  class = "imgExercises imageToggle" id="image4" src="img/main-stretch.jpg"  alt="controller"  >
-					<div class = "hidden" id="description4">
+				<div ng-controller="ImageCtrl" class="containerRight width50">
+					<img ng-click="toggleCustom()" class = "imgExercises" id="image4" src="img/side-wrist-stretch.jpg"  alt="controller"  >
+					<div ng-hide="custom" id="description4" class='description-show'>
 					<h3>Side Wrist Stretch</h3>
 					<p>Start with your left arm extended and bring your hand into a fist. Push down on your left hand with your right, hold the stretch for 15 seconds. Repeat on the opposite side.</p>
 					</div>
 				</div>
 			</div>
 			<div class = "contentContainer clearfix">
-				<div class="containerLeft width50">
-					<img  class = "imgExercises imageToggle" id="image5" src="img/main-stretch.jpg"  alt="controller"  >
-					<div class = "hidden" id="description5">
+				<div ng-controller="ImageCtrl" class="containerLeft width50">
+					<img ng-click="toggleCustom()" class = "imgExercises" id="image5" src="img/overhead-stretch.jpg"  alt="controller"  >
+					<div ng-hide="custom" id="description5" class='description-show'>
 					<h3>Overhead Tricep Stretch</h3>
 					<p>Lift you right arm above your head and let your hand fall behind your head. Grad your elbow with your left hand and pull, holding for 15 seconds. Switch arms and repeat the process. </p>
 					</div>
 				</div>
 
-				<div class="containerRight width50">
-					<img  class = "imgExercises imageToggle" id="image6" src="img/main-stretch.jpg"  alt="controller"  >
-					<div class = "hidden" id="description6">
+				<div ng-controller="ImageCtrl" class="containerRight width50">
+					<img ng-click="toggleCustom()" class = "imgExercises" id="image6" src="img/wall-stretch.jpg"  alt="controller"  >
+					<div ng-hide="custom" id="description6" class='description-show'>
 					<h3>Biceps Wall Stretch</h3>
 					<p>Standing a few inches away from a sturdy wall, reach back with your right arm and place the palm, upper arm and the inside of your elbow flat against the wall. Gently turn your body to the opposite side until you feel a light stretch along your biceps. Hold for a count of 10 to 15 seconds, then switch sides. </p>
 					</div>
@@ -83,14 +83,8 @@
 
 		</footer> -->
 	</body>
-	<script src="js/main.js"></script>
-	<script>
-		imageToggle(1);
-		imageToggle(2);
-		imageToggle(3);
-		imageToggle(4);
-		imageToggle(5);
-		imageToggle(6);
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="js/mainAngular.js"></script>
+
 </html>
 		
