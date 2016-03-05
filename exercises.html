@@ -6,21 +6,13 @@
 		<link rel="stylesheet" href="css/normalize.css">
 		<link href='https://fonts.googleapis.com/css?family=Fjord+One' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	</head>
-	<body>
-		<header>
-			<div class="title">An Exercise in Gaming...</div>
-			<div class="linksContainer">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="exercises.html">Stretching Exercises</a></li>
-					<li><a href="going-further.html">Going Further</a></li>
-					<li><a href="game-recommendations.html">Game Recommendations</a></li>
-				</ul>
-			</div>
-		</header>
-		<div ng-app="ngToggle" class="contentContainerAll">
-			
+			<!-- This page actually uses custom ng-app, added to body, works with header file include -->
+	<body ng-app="ngToggle">
+		<div ng-include="'header.html'"></div>
+		<div class="contentContainerAll">
+		
 			<h1>Stretching Basics</h1>
 			<p> So you have come... to learn or expand upon your knowledge of stretching your arms/wrists. Please click on the following images to learn the steps to complete your training.</p> <br /> 
 
@@ -83,7 +75,6 @@
 
 		</footer> -->
 	</body>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<script src="js/mainAngular.js"></script>
 
 </html>

@@ -111,7 +111,6 @@ $("#searchSubmit").click(function(e) {
 	         	$("#apiResults").html("<div class='gameInformation'>"+
 	         		"<h3>Basic Info:</h3>"+
 	         		"<span class='spanTitle'>Game Title:</span>"+data.result.name+"<br />"+
-	         		"<span class='spanTitle'>Platform:&emsp;&nbsp;</span>"+data.result.availablePlatform+"<br />"+
 	         		"<span class='spanTitle'>Genre:&emsp;&emsp;&emsp;</span>"+data.result.genre+"<br />"+
 	         		"<span class='spanTitle'>Release Date:&nbsp;</span>"+data.result.rlsdate+"<br />"+
 	         		"<h3>From Metacritic:</h3>"+

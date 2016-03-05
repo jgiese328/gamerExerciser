@@ -6,21 +6,12 @@
 		<link rel="stylesheet" href="css/normalize.css">
 		<link href='https://fonts.googleapis.com/css?family=Fjord+One' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 		<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	</head>
-	<body>
-		<header>
-			<div class="title">An Exercise in Gaming...</div>
-			<div class="linksContainer">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="exercises.html">Stretching Exercises</a></li>
-					<li><a href="going-further.html">Going Further</a></li>
-					<li><a href="game-recommendations.html">Game Recommendations</a></li>
-				</ul>
-			</div>
-		</header>
+	<body ng-app=''>
+		<div ng-include="'header.html'"></div>
 		<div class="contentContainerAll">
 
 			<h1>Going Further</h1>
