@@ -1,5 +1,5 @@
 
-/* END - exercises.html*/
+/* Start - exercises.html*/
 
 angular.module('ngToggle', [])
     .controller('ImageCtrl',['$scope', function($scope){
